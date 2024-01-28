@@ -27,9 +27,6 @@
     <ClCompile Include="Triangles.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Ejercicios.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="Shaders.cpp">
       <Filter>Archivos de origen\Shaders</Filter>
     </ClCompile>
@@ -39,12 +36,18 @@
     <ClCompile Include="..\..\..\..\Desktop\glad.c">
       <Filter>Archivos de recursos</Filter>
     </ClCompile>
+    <ClCompile Include="Ejercicios_HelloTriangle.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Orange_Fragment.glsl">
       <Filter>Archivos de origen\Shaders\src</Filter>
     </None>
     <None Include="Triangle.glsl">
+      <Filter>Archivos de origen\Shaders\src</Filter>
+    </None>
+    <None Include="Yellow_Fragment.glsl">
       <Filter>Archivos de origen\Shaders\src</Filter>
     </None>
   </ItemGroup>

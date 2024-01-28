@@ -20,7 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\Desktop\glad.c" />
-    <ClCompile Include="Ejercicios.cpp" />
+    <ClCompile Include="Ejercicios_HelloTriangle.cpp" />
     <ClCompile Include="FIleReader.cpp" />
     <ClCompile Include="Shaders.cpp" />
     <ClCompile Include="Triangles.cpp" />
@@ -28,6 +28,7 @@
   <ItemGroup>
     <None Include="Orange_Fragment.glsl" />
     <None Include="Triangle.glsl" />
+    <None Include="Yellow_Fragment.glsl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FileReader.h" />
