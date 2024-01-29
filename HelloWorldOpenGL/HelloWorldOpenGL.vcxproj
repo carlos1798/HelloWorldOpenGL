@@ -26,7 +26,7 @@
     <ClCompile Include="Triangles.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Orange_Fragment.glsl" />
+    <None Include="Color_Fragment.glsl" />
     <None Include="Triangle.glsl" />
     <None Include="Yellow_Fragment.glsl" />
   </ItemGroup>

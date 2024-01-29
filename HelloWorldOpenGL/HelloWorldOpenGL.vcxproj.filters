@@ -41,7 +41,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Orange_Fragment.glsl">
+    <None Include="Color_Fragment.glsl">
       <Filter>Archivos de origen\Shaders\src</Filter>
     </None>
     <None Include="Triangle.glsl">

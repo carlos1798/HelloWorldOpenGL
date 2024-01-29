@@ -13,7 +13,7 @@ void _process_input(GLFWwindow* window) {
 	}
 }
 
-int main_not() {
+int main() {
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -30,8 +30,13 @@ int main_not() {
 		return -1;
 	}
 
+	int nrAttributes;
+	glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &nrAttributes);
+	std::cout << "Maximum nr of vertex attributes supported: " << nrAttributes
+		<< std::endl;
+
 	unsigned int vertexshader = getCompiledShaders(GL_VERTEX_SHADER, "Triangle.glsl");
-	unsigned int fragmentShader = getCompiledShaders(GL_FRAGMENT_SHADER, "Orange_Fragment.glsl");
+	unsigned int fragmentShader = getCompiledShaders(GL_FRAGMENT_SHADER, "Color_Fragment.glsl");
 
 	int success = {};
 	char infoLog[512];
@@ -52,19 +57,9 @@ int main_not() {
 	glDeleteShader(fragmentShader);
 
 	float vertices[]{
-		// first triangle
-	0.5f, 0.5f, 0.0f, // top right
-	0.5f, -0.5f, 0.0f, // bottom right
-	-0.5f, 0.5f, 0.0f, // top left
-	// second triangle
-	0.5f, -0.5f, 0.0f, // bottom right
-	-0.5f, -0.5f, 0.0f, // bottom left
-	-0.5f, 0.5f, 0.0f // top left
-	};
-
-	unsigned int indices[] = {
-		0,1,3,
-		1,2,3
+	0.0f, 0.5f, 0.0f, // top right
+	0.5f,  -0.5f, 0.0f, // bottom right
+	-0.5f,  -0.5f, 0.0f, // top left
 	};
 
 	unsigned int VBO;
@@ -73,15 +68,11 @@ int main_not() {
 
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
-	glGenBuffers(1, &EBO);
 
 	glBindVertexArray(VAO);
 
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
@@ -97,9 +88,14 @@ int main_not() {
 		glClearColor(0.2f, 0.2f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
+		float timeValue = glfwGetTime();
+		float greenValue = (sin(timeValue) / 1.5f) + 0.8f;
+		int vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
 		glUseProgram(shaderProgram);
+		glUniform4f(vertexColorLocation, 0.4f, greenValue, 0.0f, 1.0f);
+
 		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLES, 0, 6);
+		glDrawArrays(GL_TRIANGLES, 0, 3);
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();
