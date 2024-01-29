@@ -24,27 +24,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Triangles.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Shaders.cpp">
-      <Filter>Archivos de origen\Shaders</Filter>
-    </ClCompile>
     <ClCompile Include="FIleReader.cpp">
       <Filter>Archivos de origen\Utils</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\Desktop\glad.c">
       <Filter>Archivos de recursos</Filter>
     </ClCompile>
-    <ClCompile Include="Ejercicios_HelloTriangle.cpp">
+    <ClCompile Include="shaders_theme.cpp">
       <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Archivos de origen\Shaders</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Color_Fragment.glsl">
+    <None Include="Color_Fragment.frag">
       <Filter>Archivos de origen\Shaders\src</Filter>
     </None>
-    <None Include="Triangle.glsl">
+    <None Include="Triangle.vert">
       <Filter>Archivos de origen\Shaders\src</Filter>
     </None>
     <None Include="Yellow_Fragment.glsl">
@@ -52,11 +49,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Shaders.h">
-      <Filter>Archivos de origen\Shaders</Filter>
+    <ClInclude Include="Shader.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="FileReader.h">
-      <Filter>Archivos de origen\Utils</Filter>
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
