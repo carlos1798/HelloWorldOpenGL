@@ -39,6 +39,8 @@ int main() {
 
 	Shader sh("Triangle.vert", "Color_Fragment.frag");
 
+	float offset = 0.5f;
+
 	unsigned int VBO;
 	unsigned int VAO;
 
@@ -65,6 +67,10 @@ int main() {
 		glClearColor(0.2f, 0.2f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
+		double  timeValue = glfwGetTime();
+		float greenValue = static_cast<float>(sin(timeValue) / 2 + 0.5);
+
+		sh.setFloat("xOffset", greenValue);
 		glBindVertexArray(VAO);
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 
