@@ -4,7 +4,8 @@
 #include <iostream>
 
 const char* read_file(const char* file_path) {
-	std::ifstream in(file_path);
+	std::string path = "./Shaders/" + std::string(file_path);
+	std::ifstream in(path);
 	if (!in.is_open()) {
 		std::cerr << "Error opening file: " << file_path << std::endl;
 		return nullptr;

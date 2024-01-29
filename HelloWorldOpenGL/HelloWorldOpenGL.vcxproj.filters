@@ -38,13 +38,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Color_Fragment.frag">
+    <None Include="Shaders\Color_Fragment.frag">
       <Filter>Archivos de origen\Shaders\src</Filter>
     </None>
-    <None Include="Triangle.vert">
+    <None Include="Shaders\Triangle.vert">
       <Filter>Archivos de origen\Shaders\src</Filter>
     </None>
-    <None Include="Yellow_Fragment.glsl">
+    <None Include="Shaders\Yellow_Fragment.glsl">
       <Filter>Archivos de origen\Shaders\src</Filter>
     </None>
   </ItemGroup>

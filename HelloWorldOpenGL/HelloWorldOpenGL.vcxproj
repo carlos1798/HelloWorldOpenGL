@@ -25,9 +25,9 @@
     <ClCompile Include="shaders_theme.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Color_Fragment.frag" />
-    <None Include="Triangle.vert" />
-    <None Include="Yellow_Fragment.glsl" />
+    <None Include="Shaders\Color_Fragment.frag" />
+    <None Include="Shaders\Triangle.vert" />
+    <None Include="Shaders\Yellow_Fragment.glsl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FileReader.h" />
